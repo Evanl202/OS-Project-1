@@ -2,7 +2,16 @@
 #include <stdlibh>
 #include "scheduler.h"
 
-int readProcess
+int readProcess () {
+
+}
 
 
-void printGantt
+void printGantt () {
+
+}
+
+
+void printResults () {
+  
+}
