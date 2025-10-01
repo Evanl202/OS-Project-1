@@ -2,8 +2,15 @@
 #include <stdlibh>
 #include "scheduler.h"
 
+//function to read the data from the processes file
 int readProcesses (const char *filename, Process processes[]) {
+  FILE *file = fopen(filename, "r");
 
+  int n = 0;
+  char line[100];
+  fgets(line, sizeof(line), file);
+
+  while f(fscanf(file,
 }
 
 
