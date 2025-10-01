@@ -11,7 +11,7 @@ typedef struct {
   int priority;
   int waiting_time;
   int turnaround_time;
-  int completion_time;
+  int completed;
 } Process;
 
 //Functions
