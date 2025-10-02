@@ -1,19 +1,6 @@
 #ifndef SCHEDULER_H
 #define SCHEDULER_H
 
-#define MAX_PROCESSES 100
-
-//Structure of process
-typedef struct {
-  int pid;
-  int arrival_time;
-  int burst_time;
-  int waiting_time;
-  int turnaround_time;
-  int completed;
-  int remaining_time;
-} Process;
-
 typedef struct Node {
   Process *process;
   struct Node *next;
