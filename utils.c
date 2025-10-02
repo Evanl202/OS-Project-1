@@ -1,29 +1,6 @@
 #include <stdio.h>
 #include "process.h"
 
-//function to read the data from the processes file
-int readProcesses (const char *filename, Process processes[]) {
-  FILE *file = fopen(filename, "r");
-
-  int n = 0;
-  char line[100];
-  fgets(line, sizeof(line), file);
-
-  while f(fscanf(file, "%d %d %d %d", 
-      &processes[n].pid, 
-      &processes[n].arrival_time, 
-      &processes[n].burst_time, 
-      &processes[n].priority) == 4 {
-    &processes[n].waiting_time = 0;
-    &processes[n].turnaround_time = 0;
-    &processes[n].completed = 0;
-    n++;
-  }
-  fclose(file);
-  return n;
-}
-
-
 void printGantt (int gantt[], int time_line[], int count) {
   printf("\nGannt Chart:\n") //loops through pid and prints 
   for(int i = 0; i < count; i++) {
