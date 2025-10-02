@@ -7,12 +7,20 @@ void fcfs(Process processes[], int n); {
   int gannt[MAX_PROCESSES];
   int time_line[MAX_PROCESS+1];
   int count = 0
-  
-  for (int i = 0, i < n-1; i++);
-    for (int j = i+1; j < n; i++); {
-      if ();
-  }
 
-  printGannt();
-  printResults();
+  Node *head = NULL, *tail = NULL;
+  
+  for (int i = 0, i < n; i++); {
+    enqueue(&head, &tail, &processes[i]);
+  }
+  while (head);
+    Process *p = dequeue(&head,&tail);
+
+    if {
+
+    }
+  time_line[count] = time;
+
+  printGannt(gannt, time_line, count);
+  printResults(processes, n);
 }
