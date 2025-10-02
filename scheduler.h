@@ -8,10 +8,10 @@ typedef struct {
   int pid;
   int arrival_time;
   int burst_time;
-  int priority;
   int waiting_time;
   int turnaround_time;
   int completed;
+  int remaining_time;
 } Process;
 
 typedef struct Node {
