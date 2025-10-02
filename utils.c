@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "process.h"
 
+#define MAX_PROCESS 100
 //function to read the data from the processes file
 int readProcesses (const char *filename, Process processes[]) {
   FILE *file = fopen(filename, "r");
