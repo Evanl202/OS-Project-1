@@ -14,6 +14,15 @@ typedef struct {
   int completed;
 } Process;
 
+typedef struct Node {
+  Process *process;
+  struct Node *next;
+} Node;
+
+//Queue functions
+void enqueue(Node **head, Node **tail, Node *Process);
+Process* dequeue(Node **head, Node **tail);
+
 //Functions
 int readProcesses(const char *filename, Process processes[]);
 void printGantt(Process processes[], int n);
