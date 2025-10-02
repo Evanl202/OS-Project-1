@@ -1,6 +1,7 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "scheduler.h"
+#include "queue.h"
+#include "utils.c"
 
 void fcfs(Process processes[], int n); {
   int time = 0;
