@@ -1,6 +1,7 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
+#include "process.h"
 //Class for Node and functions
 typedef struct Node {
   Process *process;
