@@ -1,6 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "scheduler.h"
 #include "utils.c"
+
 int main() {
   Process processes[MAX_PROCESSES];
   int n = readProcesses("processes.txt", processes);
