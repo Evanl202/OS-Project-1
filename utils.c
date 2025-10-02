@@ -2,6 +2,13 @@
 #include <stdlibh>
 #include "scheduler.h"
 
+
+//Enqueue function
+void enqueue(Node **head, Node **tail, Node *Process);
+
+//Dequeue function
+Process* dequeue(Node **head, Node **tail);
+
 //function to read the data from the processes file
 int readProcesses (const char *filename, Process processes[]) {
   FILE *file = fopen(filename, "r");
