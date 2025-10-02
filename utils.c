@@ -1,33 +1,5 @@
 #include <stdio.h>
-#include <stdlibh>
-#include "scheduler.h"
-
-
-//Enqueue function //Linked list implementation of enqueue
-void enqueue(Node **head, Node **tail, Node *Process); {
-  Node newNode = (Node*)malloc(sizeof(Node));
-  newNode->process = p;
-  newNode->next = NULL;
-
-  if (*tail) {
-    (*tail)->next = newNode; 
-  } else{
-      *head = newNode;
-  }
-  *tail = newNode;
-}
-//Dequeue function
-Process* dequeue(Node **head, Node **tail); {
-  if (!*head) return NULL;
-
-  Node *temp = *head;
-  Process *p = temp->process;
-  *head = (*head)->next;
-  if (!*head) *tail = NULL;
-
-  free(temp);
-  return p;
-}
+#include "process.h"
 
 //function to read the data from the processes file
 int readProcesses (const char *filename, Process processes[]) {
