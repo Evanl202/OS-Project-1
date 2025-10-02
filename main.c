@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "scheduler.h"
-#include "utils.c"
+
+int readProcesses(Process processes[]);
+#define MAX_PROCESSES 100
 
 int main() {
   Process processes[MAX_PROCESSES];
