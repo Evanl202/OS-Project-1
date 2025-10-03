@@ -43,7 +43,7 @@ void printResults (Process processes[], int n) {
   for (int i = 0; i < n; i++) {
     printf("%d\t%d\t%d\t%d\t%d\n",
         processes[i].pid,
-        processes[i].arrivial_time,
+        processes[i].arrival_time,
         processes[i].burst_time,
         processes[i].waiting_time,
         processes[i].turnaround_time,
