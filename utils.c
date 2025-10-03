@@ -1,23 +1,22 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "process.h"
 
 #define MAX_PROCESS 100
 //function to read the data from the processes file
-int readProcesses (const char *filename, Process processes[]) {
-  FILE *file = fopen(filename, "r");
+int readProcesses (Process processes[]) {
+  FILE *file = fopen("processes.txt, "r");
 
   int n = 0;
-  char line[100];
-  fgets(line, sizeof(line), file);
 
-  while f(fscanf(file, "%d %d %d %d", 
+  while f(fscanf(file, "%d %d %d", 
       &processes[n].pid, 
       &processes[n].arrival_time, 
-      &processes[n].burst_time, 
-      &processes[n].priority) == 4 {
+      &processes[n].burst_time) == 3) { 
     &processes[n].waiting_time = 0;
     &processes[n].turnaround_time = 0;
     &processes[n].completed = 0;
+    &processes[n].remaining_time = process[n].burst_time;
     n++;
   }
   fclose(file);
@@ -29,7 +28,7 @@ void printGantt (int gantt[], int time_line[], int count) {
   for(int i = 0; i < count; i++) {
     printf("| P%d ", gantt[i]);
   }
-  printf("\n")
+  printf("|\n")
 
   for(int i = 0; i < count; int++) { //loops through pid completion time and prints
     printf("%d  ", time_line[i]);
@@ -39,7 +38,7 @@ void printGantt (int gantt[], int time_line[], int count) {
 
 //prints result 
 void printResults (Process processes[], int n) {
-  float total_wt = 0, total_tat = 0;
+  double total_wt = 0, total_tat = 0;
   printf("\n PID\tAT\tBT\tWT\tTAT\n");
   for (int i = 0; i < n; i++) {
     printf("%d\t%d\t%d\t%d\t%d\n",
@@ -51,6 +50,6 @@ void printResults (Process processes[], int n) {
       total_wt += process[i].waiting_time;
       total_tat += process[i].turnaround_time;
   }
-  printf("Average waiting time = %.2f\n", total_wt / n);
+  printf("\nAverage waiting time = %.2f\n", total_wt / n);
   printf("Average turnaround time = %.2f\n", total_tat / n);
 }
