@@ -24,7 +24,7 @@ int readProcesses (Process processes[]) {
 }
 
 void printGantt (int gantt[], int time_line[], int count) {
-  printf("\nGannt Chart:\n") //loops through pid and prints 
+  printf("\nGantt Chart:\n") //loops through pid and prints 
   for(int i = 0; i < count; i++) {
     printf("| P%d ", gantt[i]);
   }
