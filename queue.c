@@ -3,8 +3,8 @@
 #include "queue.h"
 
 //Linked list implementation of enqueue from tail
-void enqueue(Node **head, Node **tail, Node *Process); {
-  Node newNode = (Node*)malloc(sizeof(Node));
+void enqueue(Node **head, Node **tail, Process *p) {
+  Node *newNode = (Node*)malloc(sizeof(Node));
   newNode->process = p;
   newNode->next = NULL;
 
@@ -16,7 +16,7 @@ void enqueue(Node **head, Node **tail, Node *Process); {
   *tail = newNode;
 }
 //Dequeue function from head
-Process* dequeue(Node **head, Node **tail); {
+Process* dequeue(Node **head, Node **tail) {
   if (!*head) return NULL;
 
   Node *temp = *head;
