@@ -6,7 +6,7 @@
 void fcfs(Process processes[], int n); {
   Node *head = NULL, *tail = NULL;
   int time = 0, completed = 0;
-  int gannt[100], time_line[100];
+  int gantt[100], time_line[100];
   int count = 0;
   
   while (completed < n) {
@@ -38,6 +38,6 @@ void fcfs(Process processes[], int n); {
       
   time_line[count] = time;
 
-  printGannt(gannt, time_line, count);
+  printGannt(gantt, time_line, count);
   printResults(processes, n);
 }
