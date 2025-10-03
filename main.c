@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include "process.h"
 #include "scheduler.h"
 
 int readProcesses(Process processes[]);
@@ -7,15 +7,10 @@ int readProcesses(Process processes[]);
 
 int main() {
   Process processes[MAX_PROCESSES];
-  int n = readProcesses("processes.txt", processes);
+  int n = readProcesses(processes);
 
-  //return 0 if no processes.txt or processes for scheduler is found
-  if (n ==0) { 
-    printf("No processes found.\n")
-    return 0;
-  }
   //Menu for selecting which scheduler for processing processes.txt
-  int input;
+  int input, quantum;
   printf("CPU Scheduling Sim\n");
   printf("1. First Come First Serve (FCFS)\n");
   printf("2. Round Robin (RR)\n");
