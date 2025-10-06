@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "process.h"
+#include "utils.h"
 
 #define MAX_PROCESS 100
 //function to read the data from the processes file
