@@ -4,7 +4,7 @@
 #include "process.h"
 
 //Algorithms
-void RoundRobin(Process processes[], int n, int quantum);
+void roundRobin(Process processes[], int n, int quantum);
 void fcfs(Process processes[], int n);
 
 #endif
