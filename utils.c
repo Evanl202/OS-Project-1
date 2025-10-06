@@ -7,7 +7,7 @@
 int readProcesses (Process processes[]) {
   FILE *file = fopen("processes.txt", "r");
   if (file == NULL) {
-    printf("Error: could not open processes.txt \n");
+    printf("Error: could not open processes.txt\n");
       return 0;
   }
   int n = 0;
@@ -29,7 +29,7 @@ int readProcesses (Process processes[]) {
 void printGantt (int gantt[], int time_line[], int count) {
   printf("\nGantt Chart:\n");
   //loops through pid and prints 
-  for(int i = 0; i <= count; i++) {
+  for(int i = 0; i < count; i++) {
     printf("| P%d ", gantt[i]);
   }
   printf("|\n");
@@ -43,14 +43,17 @@ void printGantt (int gantt[], int time_line[], int count) {
 //prints result 
 void printResults (Process processes[], int n) {
   double total_wt = 0, total_tat = 0;
+  
   printf("\n PID\tAT\tBT\tWT\tTAT\n");
+  
   for (int i = 0; i < n; i++) {
     printf("%d\t%d\t%d\t%d\t%d\n",
         processes[i].pid,
         processes[i].arrival_time,
         processes[i].burst_time,
         processes[i].waiting_time,
-        processes[i].turnaround_time,
+        processes[i].turnaround_time);
+      
       total_wt += processes[i].waiting_time;
       total_tat += processes[i].turnaround_time;
   }
