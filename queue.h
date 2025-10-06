@@ -9,7 +9,7 @@ typedef struct Node {
 } Node;
 
 //Queue functions
-void enqueue(Node **head, Node **tail, Node *Process);
+void enqueue(Node **head, Node **tail, Process *p);
 Process* dequeue(Node **head, Node **tail);
 
 #endif
