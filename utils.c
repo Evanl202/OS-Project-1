@@ -7,7 +7,7 @@
 int readProcesses (Process processes[]) {
   FILE *file = fopen("processes.txt", "r");
   if (file == NULL) {
-    printf("Error: could not open processes.txt")
+    printf("Error: could not open processes.txt \n");
       return 0;
   }
   int n = 0;
@@ -34,7 +34,7 @@ void printGantt (int gantt[], int time_line[], int count) {
   }
   printf("|\n");
 
-  for(int i = 0; i < count; int++) { //loops through pid completion time and prints
+  for(int i = 0; i <= count; i++) { //loops through pid completion time and prints
     printf("%d  ", time_line[i]);
   }
   printf("\n");
