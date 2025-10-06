@@ -31,8 +31,9 @@ void roundRobin(Process processes[], int n, int quantum) {
 
       for (int i = 0; i < n; i++) {
         if(processes[i].arrival_time > time_line[count - 1] && 
-          processes.arrival_time <= time &&
+          processes[i].arrival_time <= time &&
           !processes[i].completed) {
+          
           if (processes[i].remaining_time == processes[i].burst_time) {
             enqueue(&head, &tail, &processes[i]);
           }
