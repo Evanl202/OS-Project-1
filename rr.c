@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include "scheduler.h"
 #include "queue.h"
-#include "utils.c"
+#include "utils.h"
 
-void roundRobin(Process porcesses[], int n, int quantum) {
+void roundRobin(Process processes[], int n, int quantum) {
   Node *head = NULL, *tail = NULL;
   int time = 0, completed = 0;
   int gantt[100], time_line[100];
   int count = 0;
   
   while (completed < n) {
-    for (int i = 0, i < n; i++); {
+    for (int i = 0; i < n; i++) {
       if (processes[i].arrival_time <= time && !processes[i].completed) {
         if (processes[i].remaining_time == processes[i].burst_time) {
           enqueue(&head, &tail, &processes[i]);
@@ -22,15 +22,17 @@ void roundRobin(Process porcesses[], int n, int quantum) {
       Process *p = dequeue(&head, &tail);
       int exec_time = (p->remaining_time > quantum) ? quantum : p->remaining_time;
       
-      gannt[count] = p->pid;
-      timeline[count] = time;
+      gantt[count] = p->pid;
+      time_line[count] = time;
       count++;
 
       time += exec_time;
       p->remaining_time -= exec_time;
 
       for (int i = 0; i < n; i++) {
-        if(processes[i].arrival_time > time_line[count - 1) && processes.arrival_time <= time & !processes[i].completed) {
+        if(processes[i].arrival_time > time_line[count - 1] && 
+          processes.arrival_time <= time &&
+          !processes[i].completed) {
           if (processes[i].remaining_time == processes[i].burst_time) {
             enqueue(&head, &tail, &processes[i]);
           }
@@ -53,6 +55,6 @@ void roundRobin(Process porcesses[], int n, int quantum) {
 
   time_line[count] = time;
 
-  printGannt(gantt, time_line, count);
+  printGantt(gantt, time_line, count);
   printResults(processes, n);
 }
