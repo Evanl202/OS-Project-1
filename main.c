@@ -15,23 +15,23 @@ int main() {
   printf("1. First Come First Serve (FCFS)\n");
   printf("2. Round Robin (RR)\n");
   printf("Input scheduling type: \n");
-  scanf("%d", %input);
+  scanf("%d", &input);
 
   switch (input) {
     case 1:
       printf("\n First Come First Server (FCFS)\n");
       fcfs(processes, n);
-      break
+      break;
         
     case 2:
       printf("Input quantum time for Round Robin: ");
-      scanf("%d", %quantum);
+      scanf("%d", &quantum);
       printf("\n Round Robin (RR)\n");
-      roundRobin(process, n, quantum);
-      break
+      roundRobin(processes, n, quantum);
+      break;
 
     default:
-      printf("Invalid input.\n")
+      printf("Invalid input.\n");
   }
 
   return 0;
