@@ -1,0 +1,58 @@
+Overview 
+
+For my OS project, I decided to use the scheduling algorithms First-Come, First-Served (FCFS) and Round Robin (RR). 
+The FCFS algorithm starts with the first process that enters the ready list and runs until the process is complete before starting the next process. 
+However, the Round Robin algorithm allows a process to run for a certain amount of time called quantum time. Each process is run until its burst time reaches 0. 
+
+Implementation 
+
+The source code for the project is coded in C. The structure of the processes contains the PID, arrival time, burst time, waiting time, turnaround time, and remaining time. T
+he algorithms use a linked list queue to enqueue and dequeue the processes PID, arrival time, and other variables that are in the structure of the process. 
+At first, the queueing process was created in a for loop, however, the algorithms were based on queues, meaning it should be done using a linked list. 
+
+In First-Come, First-Served, processes are executed based on the arrival time of process. FCFS is a non-preemptive algorithm meaning first process that arrives executes first then moves onto next process until all processes are completed. 
+
+In Round Robin, each process is allocated a quantum time to run. Round robin is a preemptive algorithm as it does a lot of contexts switching. 
+Each process runs the given quantum time then the next process runs until all processes are completed. 
+If processes after the first process has a shorter burst time, it will be completed quicker due to the processes not having to wait for the first process to complete. 
+
+Results 
+
+The sample input used: 
+
+PID | Arrival Time | Burst Time  
+
+1 | 0 | 8  
+
+2 | 2 | 5  
+
+3 | 4 | 3  
+
+4 | 6 | 11 
+
+FCFS Output 
+
+Process executes based on arrival time and after process ahead of it completes. Turnaround time and waiting time is long due to processes having to wait. 
+
+Round Robin output 
+
+Each process is run with quantum time # then the next process runs until completion. Based on the quantum time, the amount of context switches can differ and the time.  
+
+Result Comparision 
+
+Based on the given quantum time, FCFS could be more efficient. 
+If quantum time is very large, it will result in the same results. 
+Round robin can complete shorter tasks due to context switching and improve time-sharing while FCFS has low overhead but could result in shorter tasks being blocked until the first task is completed. 
+
+Challenges and Solutions 
+
+The most difficult challenge aside from the implementation of the algorithms was the syntax. Small mistakes in the code due to missing or wrong syntax resulted in broken code. The mistakes were simple but took time to mend. 
+
+The queue management for handling enqueue and dequeue was hard. The errors in the head and tail resulted in the processes not being enqueue and dequeue properly. This problem was fixed using dynamic updates on enqueue and dequeue. 
+
+The scheduling logic was implemented wrong. It did not check the arrival time, which caused some problems with the scheduling. To solve this, the arrival time was checked before enqueueing the processes. 
+
+Gantt chart display was not aligned and did not display the times, PID, etc. 
+The printResults were also bugged. This was due to some coding errors which were fixed, but mainly since the processes.txt contained PID ARRIVAL_Time BURST_TIME as headers instead of just the numbers associated with each variable. 
+
+The code was written modularly to simplify the process of debugging. 
